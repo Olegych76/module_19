@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Магазин</title>
+</head>
+<body>
+    <header>
+        {% block pagename %}
+            <h1>Игры</h1>
+        {% endblock %}
+    </header>
+    <main>
+        {% block menu %}
+            {% include 'fourth_task/menu.html' %}
+        {% endblock %}
+        {% block content %}
+            <ul>
+                {% for game in games %}
+                    <li>
+                        {{ game.title }} | {{ game.description }}. Стоимость: {{ game.cost }}
+                        <a href="/cart"><button>Купить</button></a>
+                    </li>
+                {% empty %}
+                    <li>Нет доступных игр.</li>
+                {% endfor %}
+            </ul>
+        {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная</title>
+</head>
+<body>
+
+    <header>
+        {% block pagename %}
+             <h1>Главная страница</h1>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block menu %}
+            {% include 'fourth_task/menu.html' %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Корзина</title>
+</head>
+<body>
+
+    <header>
+        {% block pagename %}
+             <h1>Корзина</h1>
+        {% endblock %}
+    </header>
+
+    <main>
+        {% block menu %}
+            {% include 'fourth_task/menu.html' %}
+        {% endblock %}
+
+        {% block content %}
+            <h2>Извините, ваша корзина пуста</h2>
+        {% endblock %}
+    </main>
+
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+
+</body>
+</html>
