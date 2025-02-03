@@ -1,10 +1,18 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render
 from .forms import UserRegister
-from .models import Buyer, Game
+from .models import Buyer, Game, News
 from django.shortcuts import render
-from .models import Game  # Импортируем модель Game
 
 # Create your views here.
+
+
+def platform_news(request):
+    news = News.objects.all().order_by('-date')
+    paginator = Paginator(news, 1)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'news.html', {'page_obj': page_obj})
 
 
 def platform(request):
